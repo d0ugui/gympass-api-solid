@@ -18,8 +18,8 @@ describe('Check-in Use Case', () => {
       id: 'gym-01',
       title: 'JavaScript Gym',
       description: '',
-      latitude: new Decimal(0),
-      longitutde: new Decimal(0),
+      latitude: new Decimal(-23.5535016),
+      longitutde: new Decimal(-46.6222736),
       phone: '',
     })
 
@@ -61,13 +61,13 @@ describe('Check-in Use Case', () => {
     ).rejects.toBeInstanceOf(Error)
   })
 
-  it('should  be able to check in twice but in different days', async () => {
+  it('should be able to check in twice but in different days', async () => {
     vi.setSystemTime(new Date(2022, 0, 20, 8, 0, 0))
 
     await sut.execute({
       gymId: 'gym-01',
       userId: 'user-01',
-      userLatitude: 0,
+      userLatitude: -23.5535016,
       userLongitude: -46.6222736,
     })
 
@@ -81,5 +81,25 @@ describe('Check-in Use Case', () => {
     })
 
     expect(checkIn.id).toEqual(expect.any(String))
+  })
+
+  it('should bot be able to check in distant gym', async () => {
+    gymsRepository.items.push({
+      id: 'gym-02',
+      title: 'JavaScript Gym',
+      description: '',
+      latitude: new Decimal(-23.4886025),
+      longitutde: new Decimal(-46.5867407),
+      phone: '',
+    })
+
+    await expect(() =>
+      sut.execute({
+        gymId: 'gym-02',
+        userId: 'user-01',
+        userLatitude: -23.5535016,
+        userLongitude: -46.6222736,
+      }),
+    ).rejects.toBeInstanceOf(Error)
   })
 })
