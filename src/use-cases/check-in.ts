@@ -37,7 +37,7 @@ export class CheckInUseCase {
       { latitude: userLatitude, longitude: userLongitude },
       {
         latitude: gym.latitude.toNumber(),
-        longitude: gym.longitutde.toNumber(),
+        longitude: gym.longitude.toNumber(),
       },
     )
 

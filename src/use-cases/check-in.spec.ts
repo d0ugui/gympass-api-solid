@@ -19,7 +19,7 @@ describe('Check-in Use Case', () => {
       title: 'JavaScript Gym',
       description: '',
       latitude: new Decimal(-23.5535016),
-      longitutde: new Decimal(-46.6222736),
+      longitude: new Decimal(-46.6222736),
       phone: '',
     })
 
@@ -89,7 +89,7 @@ describe('Check-in Use Case', () => {
       title: 'JavaScript Gym',
       description: '',
       latitude: new Decimal(-23.4886025),
-      longitutde: new Decimal(-46.5867407),
+      longitude: new Decimal(-46.5867407),
       phone: '',
     })
 
