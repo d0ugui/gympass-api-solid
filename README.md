@@ -13,33 +13,28 @@ Last but not least, in order to simplify the application execution process you c
 ```bash
 # Clone repo
 $ git clone https://github.com/d0ugui/gympass-api-solid
-```
 
-```bash
-# Run and create containers
-$ cd gympass-api-solid
-$ docker-compose up
-```
+# run and create containers
+$ cd gympass-api-solid && docker compose up -d
 
-```bash
 # create .env
 $ look at the example in .env.example file
-```
 
-```bash
 # install deps
 $ yarn or npm install
-```
 
-```bash
 # apply prisma migrations
 $ npx prisma migrate deploy
-```
 
-```bash
 # run api
 $ npm run dev or yarn dev
 ```
+
+## 📝 License
+
+This software is available under the following licenses:
+
+- [MIT](https://rem.mit-license.org)
 
 <!-- ## RFs (Requisitos funcionais)
 
