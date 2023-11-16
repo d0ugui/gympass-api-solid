@@ -1,8 +1,47 @@
-# App
+## About
 
-GymPass style app.
+A complete GymPass API built with Fastify, TypeScript, Prisma and PostgreSQL, using SOLID principles. The API is designed to handle authentication (JWT), authorization permission system (RBAC), unit tests and e2e tests with a CI workflow created on GitHub Actions for automatically test the source code in a push or pull request event on main branch.
 
-## RFs (Requisitos funcionais)
+Last but not least, in order to simplify the application execution process you can use the container environemnt created for this project using Docker Compose.
+
+## Technologies
+
+[![My Skills](https://skillicons.dev/icons?i=nodejs,typescript,prisma,postgres,docker,githubactions)](https://skillicons.dev)
+
+## 🚀 Running the project
+
+```bash
+# Clone repo
+$ git clone https://github.com/d0ugui/gympass-api-solid
+```
+
+```bash
+# Run and create containers
+$ cd gympass-api-solid
+$ docker-compose up
+```
+
+```bash
+# create .env
+$ look at the example in .env.example file
+```
+
+```bash
+# install deps
+$ yarn or npm install
+```
+
+```bash
+# apply prisma migrations
+$ npx prisma migrate deploy
+```
+
+```bash
+# run api
+$ npm run dev or yarn dev
+```
+
+<!-- ## RFs (Requisitos funcionais)
 
 - [x] Deve ser possível se cadastrar;
 - [x] Deve ser possível se autenticar;
@@ -29,4 +68,4 @@ GymPass style app.
 - [x] A senha do usuário precisa estar criptografada;
 - [x] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL;
 - [x] Todas listas de dados precisam estar paginadas com 20 items por página;
-- [x] O usuário deve ser identificado por um JWT (JSON Web Token);
+- [x] O usuário deve ser identificado por um JWT (JSON Web Token); -->
